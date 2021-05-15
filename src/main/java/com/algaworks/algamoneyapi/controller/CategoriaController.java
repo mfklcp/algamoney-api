@@ -37,8 +37,7 @@ public class CategoriaController{
 
         Categoria categoriaSalva = categoriaRepository.save(categoria);
 
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}")
-                .buildAndExpand(categoriaSalva.getId()).toUri();
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(categoriaSalva.getId()).toUri();
 
         response.setHeader("Location", uri.toASCIIString());
 
